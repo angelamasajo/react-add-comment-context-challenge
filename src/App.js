@@ -9,8 +9,9 @@ class App extends Component {
     comments: [],
   };
 
-  addComment = () => {
-    /* change me */
+  addComment = (newComment) => {
+    //this is the function to add comments, add anything into the array
+    this.setState({comments: [...this.state.comments, newComment]})
   }
 
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
       <CommentsContext.Provider
         value={{
           comments: this.state.comments,
+          addComment: this.addComment
         }}
       >
         <div className="App">
